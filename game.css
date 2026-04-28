@@ -1,0 +1,127 @@
+body{
+    min-height:100vh;
+    background-image: url("img/battle-hardened-war-city_1148042-50.jpg");
+    background-position: center;
+    background-repeat : no-repeat;
+    background-size:cover;
+
+    
+    
+}
+
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    justify-content: space-around;
+    
+}
+#nav_left{
+    
+    
+    flex-grow: 1;
+}
+#nav_right{
+    flex-grow: 1;
+    font-size: 1.3em;
+    font-family: Verdana,  Tahoma, sans-serif;
+    max-width: 200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    
+    
+    
+}
+
+#nav_center{
+    flex-grow: 4;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    justify-content: center;
+    
+    column-gap: 3%;
+}
+
+#nav_right:hover{
+    transform: scale(1.2);
+}
+#nav_center a{
+    background-color: transparent; 
+    font-weight:800 ;
+     font-size: 2em;
+     color: rgb(67, 3, 126);
+     display: inline-block;
+     border-radius: 20px;
+     padding: 5px 20px ;
+     text-decoration: none;
+     transition : background-color 0.3s ease;
+
+}
+
+
+#nav_center a:hover{
+    
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+#play >h1{
+    font-family: 'Bebas Neue', 'Anton', 'Staatliches', sans-serif;
+  font-size: 10rem;          /* ajuste selon ton besoin */
+  font-weight: bold;
+  font-style: oblique;
+  letter-spacing: 6px;      /* espacement large comme les affiches */
+  color: #000000;           /* rouge foncé sang */
+  text-shadow: 6px 6px 0px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+#play_button:hover{
+    transform: scale(1.5);
+}
+
+#select_button:hover{
+    transform: scale(1.5);
+}
+
+#select_player{
+    display: none;
+    font-size: 2em;
+}
+#img_players{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+
+}
+
+#select_player img{
+    height: 300px;
+    width:150px;
+    display: block;
+    border-radius: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+#select_player img:hover{
+    transform: scale(1.2);
+}
+
+
+
+
+
+
+
+
+
+

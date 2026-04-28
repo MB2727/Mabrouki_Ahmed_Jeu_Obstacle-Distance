@@ -3,14 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <title>WarG</title>
+    <link rel="stylesheet" href="game.css">
+    <link rel="icon" href="img/dragon-solid-full.svg">
 </head>
 <body>
-    <nav>
+    
+    <div class="nav">
+       <img id="nav_left" src="img/skull-crossbones-solid-full.svg" alt="Skull" style="height: 50px;width: 50px;">
+       <div id="nav_center">
+       <a class="aa" href="game.html" title="This Page">Home</a>
+       <a class="aa" href="info.html" target="_blank" title="under construction">Game Info</a>
+       <a class="aa" href="news.html" target="_blank" title="under construction">News</a>
+       <a class="aa" href="support.html" target="_blank" title="under construction">Support</a>
+       </div>
+       <div id="nav_right">
+          <img id="music" src="img/music-solid-full.svg" alt="music" style="height: 40px; width: 40px;">
+          <span id="music_status">OFF</span>
+       </div>
        
-    </nav>
+    </div>
+    <hr style="width: 45%;border-color: black;">
 
 
-    <div></div>
-    <section></section>
+
+   <div id="play">
+
+    <h1>Death Age</h1>
+    
+    <button type="button" id="play_button" style="background-color: rgb(7, 173, 7);
+    border: 7px solid beige; border-radius: 10px;
+    display: inline-block; height: 80px;width:250px;
+    font-size: 2em;font-weight: bold;font-style: oblique;
+    margin-left: 42%;transition: transform 0.5s ease-in-out;">PLAY</button>
+
+   </div>
+
+   <div id="select_player">
+    <br><br>
+    <div id="img_players">
+    <img class="img_players" src="img/khami.png" alt="iran leader">
+    <img class="img_players" src="img/kais.png" alt="tunisia president">
+    <img class="img_players" src="img/putin.png" alt="russia president">
+    <img class="img_players" src="img/xi.png" alt="china president">
+    <img class="img_players" src="img/trump.png" alt="eww">
+    </div>
+    
+    <br><br>
+
+    <button type="button" id="select_button" style="background-color: rgb(7, 173, 7);
+    border: 7px solid beige; border-radius: 10px;
+    display: inline-block; height: 80px;width:275px;
+    font-size: 1.2em;font-weight: bold;font-style: oblique;
+    margin-left: 42%;transition: transform 0.5s ease-in-out;">SELECT</button>
+
+   </div>
+
+
+
+    
+
+<script src="game.js">
+
+</script>
+   
+    
 </body>
 </html>
