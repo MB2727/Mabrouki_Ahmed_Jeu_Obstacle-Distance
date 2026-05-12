@@ -11,10 +11,10 @@
     <div class="nav">
        <img id="nav_left" src="img/skull-crossbones-solid-full.svg" alt="Skull" style="height: 50px;width: 50px;">
        <div id="nav_center">
-       <a class="aa" href="index.html" title="This Page">Home</a>
-       <a class="aa"  target="_blank" title="under construction">Game Info</a>
-       <a class="aa"  target="_blank" title="under construction">News</a>
-       <a class="aa"  target="_blank" title="under construction">Support</a>
+       <a class="aa" href="index.html" id="home"  title="This Page">Home</a>
+       <a class="aa" href="" id="info"  >Game Info</a>
+       <a class="aa" href="" id="news" >News</a>
+       <a class="aa" href="" id="support" >Support</a>
        </div>
        <div id="nav_right">
           <img id="music" src="img/music-solid-full.svg" alt="music" style="height: 40px; width: 40px;">
@@ -57,6 +57,21 @@
     margin-left: 42%;transition: transform 0.5s ease-in-out;">SELECT</button>
 
    </div>
+
+
+   <!-- Zone de jeu (cachée au départ) -->
+<div id="gameArea" style="display: none;">
+    <div id="gameHeader">
+        <span>Score: <span id="gameScore">0</span></span>
+        <span>Distance: <span id="gameDistance">0</span> m</span>
+    </div>
+    <canvas id="gameCanvas" width="1200" height="600"></canvas
+    <div id="gameControls">
+        <button id="restartBtn">Restart</button>
+        <button id="menuBtn">Menu</button>
+    </div>
+    <div id="gameStatus"></div>
+</div>
 
 
 

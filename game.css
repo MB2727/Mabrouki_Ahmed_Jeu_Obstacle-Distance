@@ -24,6 +24,7 @@ body{
     
     flex-grow: 1;
 }
+
 #nav_right{
     flex-grow: 1;
     font-size: 1.3em;
@@ -116,12 +117,66 @@ body{
     transform: scale(1.2);
 }
 
+/* Zone de jeu - fond plus lumineux et agréable */
+#gameArea {
+    background: linear-gradient(145deg, #2e4a2a 0%, #1d3a1a 100%);
+    border-radius: 28px;
+    padding: 20px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,215,0,0.3);
+}
 
+/* Le canvas lui-même : fond clair et texture subtile */
+#gameCanvas {
+    background: #8cb87a;
+    border-radius: 16px;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.3);
+    display: block;
+    cursor: pointer;
+    /* Optionnel: un léger dégradé pour le ciel */
+    background: linear-gradient(180deg, #b8d9a6 0%, #8cb87a 100%);
+}
 
+/* Sol : plus contrasté, effet terre battue */
+/* Ces styles agissent sur le dessin du sol à l'intérieur du canvas. 
+   Mais on peut aussi améliorer le dessin via JS. Pour l'instant, on va ajuster le JS aussi. */
 
+/* En-tête du jeu : fond plus clair et lisible */
+#gameHeader {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    border-radius: 40px;
+    padding: 10px 24px;
+    color: #ffec80;
+    text-shadow: 2px 2px 0 #5a3e1b;
+    font-size: 1.8rem;
+}
 
+/* Boutons plus contrastés */
+#gameControls button {
+    background: #ffcd7e;
+    color: #2c1a0e;
+    font-weight: bold;
+    border: none;
+    padding: 10px 28px;
+    font-size: 1.2rem;
+    border-radius: 40px;
+    box-shadow: 0 4px 0 #7a4a2a;
+    transition: 0.1s linear;
+}
 
+#gameControls button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #7a4a2a;
+}
 
-
-
+/* Statut de jeu */
+#gameStatus {
+    background: rgba(0,0,0,0.5);
+    border-radius: 30px;
+    padding: 8px 16px;
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 1.4rem;
+}
 
