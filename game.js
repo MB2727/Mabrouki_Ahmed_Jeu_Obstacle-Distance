@@ -111,7 +111,7 @@ music.addEventListener("click", () => {
     }
 });
 
-// ---------- JEU ----------
+
 const gameArea = document.getElementById('gameArea');
 const gameCanvas = document.getElementById('gameCanvas');
 const ctx = gameCanvas.getContext('2d');
@@ -127,7 +127,7 @@ let score = 0;
 let distance = 0;
 let frame = 0;
 
-// JOUEUR - accroupissement très bas
+
 const player = {
     x: 150,
     y: 0,
@@ -140,7 +140,7 @@ const player = {
     yVelocity: 0,
     gravity: 0.65,
     jumpPower: -18,
-    duckHeight: 45,        // plus bas pour éviter les bombes
+    duckHeight: 45,       
     minX: 20,
     maxX: 800
 };
@@ -170,7 +170,7 @@ function preloadGameImages() {
 preloadGameImages();
 
 let jetX = 1200;
-let baseSpeed = 3.8;            // rythme augmenté
+let baseSpeed = 3.8;            
 let currentSpeed = baseSpeed;
 let lastSpawnFrame = 0;
 
@@ -266,7 +266,7 @@ function updateGame() {
     distance += currentSpeed * 0.15;
     updateScoreDisplay();
 
-    // Saut
+    
     if (player.isJumping) {
         player.yVelocity += player.gravity;
         player.y += player.yVelocity;
@@ -281,24 +281,24 @@ function updateGame() {
         }
     }
 
-    // Accroupissement
+   
     player.height = player.isDucking ? player.duckHeight : player.normalHeight;
     if (!player.isJumping) {
         player.y = player.yGround - player.height;
     }
 
-    // Déplacement horizontal
+   
     let move = 0;
     if (leftPressed && player.x > player.minX) move = -6;
     if (rightPressed && player.x < player.maxX) move = 6;
     player.x += move;
 
-    // Déplacement des obstacles (véhicules seulement) + bombes (tombent verticalement, pas de défilement horizontal)
+    
     for (let i = 0; i < obstacles.length; i++) {
         if (obstacles[i].type !== OBSTACLE_BOMB) {
             obstacles[i].x -= currentSpeed;
         }
-        // Les bombes tombent (déjà géré par ySpeed)
+        
         if (obstacles[i].type === OBSTACLE_BOMB) {
             obstacles[i].y += obstacles[i].ySpeed;
         }
@@ -318,11 +318,11 @@ function updateGame() {
     jetX -= currentSpeed * 0.7;
     if (jetX + 60 < 0) jetX = gameCanvas.width + 50;
 
-    // Spawn plus fréquent (55 frames)
+   
     if (frame - lastSpawnFrame > 55) {
         lastSpawnFrame = frame;
         let rand = Math.random();
-        if (rand < 0.35) { // véhicule
+        if (rand < 0.35) { 
             const origW = 55, origH = 45;
             const newW = Math.floor(origW * 0.7);
             const newH = Math.floor(origH * 0.7);
@@ -333,17 +333,17 @@ function updateGame() {
                 height: newH,
                 type: OBSTACLE_VEHICLE
             });
-        } else if (rand < 0.6) { // bombe – tombe dans la moitié gauche
-            const leftX = 80 + Math.random() * 500; // X entre 80 et 580 (moitié gauche)
+        } else if (rand < 0.6) { 
+            const leftX = 80 + Math.random() * 500; 
             obstacles.push({
                 x: leftX,
-                y: 60 + Math.random() * 120, // hauteur initiale variée
+                y: 60 + Math.random() * 120, 
                 width: 30,
                 height: 30,
                 type: OBSTACLE_BOMB,
-                ySpeed: 4 + Math.random() * 4   // chute rapide (4 à 8)
+                ySpeed: 4 + Math.random() * 4  
             });
-        } else if (rand < 0.85) { // bonus
+        } else if (rand < 0.85) { 
             bonuses.push({
                 x: gameCanvas.width,
                 y: player.yGround - 45,
